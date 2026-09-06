@@ -6,6 +6,13 @@ struct LibraryView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
+                if model.selectedKind == nil,
+                   model.selectedActivityCategory == nil,
+                   model.searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+                   !model.walkItems.isEmpty {
+                    walksShortcut
+                }
+
                 filterBar
 
                 if model.isLoading && model.items.isEmpty {
@@ -78,6 +85,36 @@ struct LibraryView: View {
             }
             .padding(.vertical, 2)
         }
+    }
+
+    private var walksShortcut: some View {
+        NavigationLink {
+            WalksView()
+        } label: {
+            HStack(spacing: 13) {
+                Image(systemName: ActivityCategory.walk.systemImage)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .frame(width: 44, height: 44)
+                    .background(Color.blue, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Walks to try")
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                    Text("\(model.walkItems.count) saved starting point\(model.walkItems.count == 1 ? "" : "s")")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.tertiary)
+            }
+            .padding()
+            .background(.background, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 }
 

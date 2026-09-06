@@ -83,7 +83,7 @@ flowchart LR
 | S-05 | Build Library filters and search | S-02 | Eat, Cook, and Visit views support type, activity subtype such as Walk, cuisine, dish/ingredient, status, and collection filters. |
 | S-06 | Add reactions, status, and notes | B-02, S-02 | Each person can independently favourite, skip, mark visited/cooked, and add a note without overwriting the other person's data. |
 | S-07 | Add deduplication and entity consolidation | I-06, S-06 | Repeated reels preserve their sources while confirmed references to the same place or recipe are consolidated. |
-| S-08 | Add activity and walk details | S-02 | Activity cards support subtype, starting point, duration, distance, difficulty, and a clear distinction between a mapped start point and a route that has not been resolved. |
+| S-08 | Add activity and walk details | S-02 | Activity cards support subtype, starting point, duration, distance, difficulty, and a clear distinction between a mapped start point and a route that has not been resolved. The Library exposes a Walks collection. |
 
 **Milestone S exit:** both people can capture, browse, search, correct, and manage the shared collection without chat.
 

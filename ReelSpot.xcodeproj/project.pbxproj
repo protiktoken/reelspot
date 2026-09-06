@@ -19,6 +19,7 @@
 		B460FBE79555C45D60804D68 /* SavedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE795E8B287A2BABDF448038 /* SavedItem.swift */; };
 		C06C3CFF45A87CB8C1D79139 /* SavedItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99DC10BA4C93FB63BE7299 /* SavedItemRepository.swift */; };
 		CC75838E16B608C8AE86AF32 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDFA3C974CC09165E6DB4D /* InboxView.swift */; };
+		D2271820B97C2A369E43562D /* WalksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5444A938ECB0A04212F94AC /* WalksView.swift */; };
 		EF02B6235A737C59EA93703E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D484D26D6A5117C176A4B61 /* AppModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		D194DFF290D81EC32CBAD33D /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		D1D09F30F74DEF85E3CE1598 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		DE795E8B287A2BABDF448038 /* SavedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItem.swift; sourceTree = "<group>"; };
+		E5444A938ECB0A04212F94AC /* WalksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksView.swift; sourceTree = "<group>"; };
 		E9696854AD486F722DF397CD /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		EE54937AC52CD5AFD92D8767 /* MapHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				EE54937AC52CD5AFD92D8767 /* MapHomeView.swift */,
 				516F19B05DF1C9DBDBFD23A0 /* RootView.swift */,
 				B5967E7E608C84842138BEC1 /* SettingsView.swift */,
+				E5444A938ECB0A04212F94AC /* WalksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				B460FBE79555C45D60804D68 /* SavedItem.swift in Sources */,
 				C06C3CFF45A87CB8C1D79139 /* SavedItemRepository.swift in Sources */,
 				1BC9453A290B7E475B076217 /* SettingsView.swift in Sources */,
+				D2271820B97C2A369E43562D /* WalksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

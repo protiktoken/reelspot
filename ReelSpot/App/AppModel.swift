@@ -32,6 +32,10 @@ final class AppModel: ObservableObject {
         filteredItems.filter(\.isMapped)
     }
 
+    var walkItems: [SavedItem] {
+        items.filter { $0.kind == .activity && $0.activityCategory == .walk }
+    }
+
     var needsReviewCount: Int {
         items.filter { $0.status == .needsReview }.count
     }
