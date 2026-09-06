@@ -18,7 +18,7 @@ The first shell has four tabs:
 
 - Inbox shows processing, ready, and needs-review items.
 - Map shows only confirmed place coordinates and opens the same detail screen.
-- Library provides type, status, and text filters without requiring chat.
+- Library provides type, activity subtype (including Walks), status, and text filters without requiring chat.
 - Ask presents example questions and a local mock response so the interaction can be designed before the assistant exists.
 
 ## Front-end boundaries
@@ -39,7 +39,7 @@ Views should render state and send user intent. `AppModel` owns screen-level sta
 
 Every screen should have loading, content, empty, and error states. Saved items also need `processing`, `ready`, `needs review`, and `failed` status. Unknown metadata should be displayed as unknown or estimated instead of omitted without explanation.
 
-Use one stable `SavedItem` model for place and recipe cards. Keep evidence and source information visible on the detail screen. A confirmed map pin requires a coordinate from a resolved place; an unresolved candidate belongs in review and does not appear as a confirmed pin.
+Use one stable `SavedItem` model for place, recipe, and activity cards. Activities have a subtype such as Walk, Hike, Beach, Museum, or Market. A walk can initially be represented by its starting point, distance, duration, and difficulty; route geometry and elevation can be added later. Keep evidence and source information visible on the detail screen. A map marker requires a coordinate from a resolved place or activity starting point; an unresolved candidate belongs in review and does not appear as a confirmed marker.
 
 ## Build order
 

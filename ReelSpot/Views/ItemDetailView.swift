@@ -16,8 +16,8 @@ struct ItemDetailView: View {
                     detailSection(title: "Location", systemImage: "mappin.and.ellipse") {
                         Text(address)
                             .font(.body)
-                        if item.isConfirmedPlace {
-                            Text("Confirmed place · shown on your map")
+                        if item.isMapped {
+                            Text(item.kind == .activity ? "Starting point · shown on your map" : "Confirmed place · shown on your map")
                                 .font(.caption)
                                 .foregroundStyle(.green)
                         }
@@ -27,6 +27,19 @@ struct ItemDetailView: View {
                 if let duration = item.duration {
                     detailSection(title: "Time", systemImage: "clock") {
                         Text(duration)
+                    }
+                }
+
+                if item.kind == .activity, let category = item.activityCategory {
+                    detailSection(title: "\(category.title) details", systemImage: category.systemImage) {
+                        HStack(spacing: 18) {
+                            if let distance = item.distance {
+                                detailValue(title: "Distance", value: distance)
+                            }
+                            if let difficulty = item.difficulty {
+                                detailValue(title: "Difficulty", value: difficulty)
+                            }
+                        }
                     }
                 }
 
@@ -133,6 +146,16 @@ struct ItemDetailView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(.background, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    }
+
+    private func detailValue(title: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.body.weight(.medium))
+        }
     }
 }
 

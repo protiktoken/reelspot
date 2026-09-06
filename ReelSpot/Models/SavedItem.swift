@@ -49,6 +49,39 @@ enum ProcessingStatus: String, Sendable {
     }
 }
 
+enum ActivityCategory: String, CaseIterable, Identifiable, Sendable {
+    case walk
+    case hike
+    case beach
+    case museum
+    case market
+    case other
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .walk: "Walk"
+        case .hike: "Hike"
+        case .beach: "Beach"
+        case .museum: "Museum"
+        case .market: "Market"
+        case .other: "Other"
+        }
+    }
+
+    var systemImage: String {
+        switch self {
+        case .walk: "figure.walk"
+        case .hike: "figure.hiking"
+        case .beach: "beach.umbrella"
+        case .museum: "building.columns"
+        case .market: "storefront"
+        case .other: "sparkles"
+        }
+    }
+}
+
 struct MapLocation: Hashable, Sendable {
     let latitude: Double
     let longitude: Double
@@ -82,10 +115,13 @@ struct SavedItem: Identifiable, Hashable, Sendable {
     let address: String?
     let coordinate: MapLocation?
     let duration: String?
+    let activityCategory: ActivityCategory?
+    let distance: String?
+    let difficulty: String?
     let evidence: [Evidence]
 
-    var isConfirmedPlace: Bool {
-        kind == .place && coordinate != nil && status == .ready
+    var isMapped: Bool {
+        coordinate != nil && status == .ready
     }
 
     init(
@@ -102,6 +138,9 @@ struct SavedItem: Identifiable, Hashable, Sendable {
         address: String? = nil,
         coordinate: MapLocation? = nil,
         duration: String? = nil,
+        activityCategory: ActivityCategory? = nil,
+        distance: String? = nil,
+        difficulty: String? = nil,
         evidence: [Evidence] = []
     ) {
         self.id = id
@@ -117,6 +156,9 @@ struct SavedItem: Identifiable, Hashable, Sendable {
         self.address = address
         self.coordinate = coordinate
         self.duration = duration
+        self.activityCategory = activityCategory
+        self.distance = distance
+        self.difficulty = difficulty
         self.evidence = evidence
     }
 }

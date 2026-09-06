@@ -8,6 +8,7 @@ final class AppModel: ObservableObject {
     @Published private(set) var errorMessage: String?
     @Published var searchText = ""
     @Published var selectedKind: SavedItemKind?
+    @Published var selectedActivityCategory: ActivityCategory?
 
     private let repository: SavedItemRepository
 
@@ -18,16 +19,17 @@ final class AppModel: ObservableObject {
     var filteredItems: [SavedItem] {
         items.filter { item in
             let matchesKind = selectedKind == nil || item.kind == selectedKind
+            let matchesActivityCategory = selectedActivityCategory == nil || item.activityCategory == selectedActivityCategory
             let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
             let matchesQuery = query.isEmpty || [item.title, item.subtitle, item.sourceName, item.tags.joined(separator: " ")]
                 .joined(separator: " ")
                 .localizedCaseInsensitiveContains(query)
-            return matchesKind && matchesQuery
+            return matchesKind && matchesActivityCategory && matchesQuery
         }
     }
 
-    var confirmedPlaces: [SavedItem] {
-        filteredItems.filter(\.isConfirmedPlace)
+    var mappedItems: [SavedItem] {
+        filteredItems.filter(\.isMapped)
     }
 
     var needsReviewCount: Int {
@@ -77,6 +79,9 @@ final class AppModel: ObservableObject {
             address: address,
             coordinate: coordinate,
             duration: item.duration,
+            activityCategory: item.activityCategory,
+            distance: item.distance,
+            difficulty: item.difficulty,
             evidence: item.evidence
         )
         items[index] = updated

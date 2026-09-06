@@ -53,6 +53,7 @@ struct LibraryView: View {
                     isSelected: model.selectedKind == nil
                 ) {
                     model.selectedKind = nil
+                    model.selectedActivityCategory = nil
                 }
 
                 ForEach(SavedItemKind.allCases) { kind in
@@ -62,7 +63,17 @@ struct LibraryView: View {
                         isSelected: model.selectedKind == kind
                     ) {
                         model.selectedKind = kind
+                        model.selectedActivityCategory = nil
                     }
+                }
+
+                FilterChip(
+                    title: "Walks",
+                    systemImage: ActivityCategory.walk.systemImage,
+                    isSelected: model.selectedActivityCategory == .walk
+                ) {
+                    model.selectedKind = .activity
+                    model.selectedActivityCategory = .walk
                 }
             }
             .padding(.vertical, 2)

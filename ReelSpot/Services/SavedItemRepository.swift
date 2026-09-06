@@ -65,7 +65,12 @@ struct MockSavedItemRepository: SavedItemRepository, Sendable {
             savedBy: "You",
             status: .processing,
             tags: ["outdoors", "free"],
-            address: "Merri Creek, VIC"
+            address: "Merri Creek, VIC",
+            coordinate: MapLocation(latitude: -37.7661, longitude: 144.9924),
+            duration: "45 min",
+            activityCategory: .walk,
+            distance: "3.2 km",
+            difficulty: "Easy"
         ),
         SavedItem(
             title: "Gochujang butter beans",

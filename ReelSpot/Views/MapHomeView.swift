@@ -8,7 +8,7 @@ struct MapHomeView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             Map(position: $cameraPosition) {
-                ForEach(model.confirmedPlaces) { item in
+                ForEach(model.mappedItems) { item in
                     if let coordinate = item.coordinate {
                         Marker(item.title, coordinate: CLLocationCoordinate2D(
                             latitude: coordinate.latitude,
@@ -21,10 +21,10 @@ struct MapHomeView: View {
             .mapStyle(.standard)
             .ignoresSafeArea(edges: .bottom)
 
-            if model.confirmedPlaces.isEmpty && !model.isLoading {
+            if model.mappedItems.isEmpty && !model.isLoading {
                 EmptyStateView(
                     title: "Your map is waiting",
-                    message: "Confirmed places from saved reels will appear here.",
+                    message: "Confirmed places and walk starting points from saved reels will appear here.",
                     systemImage: "map"
                 )
                 .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -43,7 +43,7 @@ struct MapHomeView: View {
     private var placeStrip: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(model.confirmedPlaces) { item in
+                ForEach(model.mappedItems) { item in
                     NavigationLink(value: item.id) {
                         VStack(alignment: .leading, spacing: 5) {
                             Text(item.title)
