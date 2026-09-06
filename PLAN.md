@@ -66,21 +66,21 @@ Use several independent facets rather than a single category tree: item type, cu
 
 Each detail card links back to its source reels, explains the match, supports corrections, and shows who saved it. The map and filters must remain useful without using chat.
 
-## Trail experience and AllTrails relationship
+## Trail experience and independent data
 
-AllTrails is a useful product reference, but an AllTrails-style feature and an AllTrails data integration are different scopes. AllTrails documents an AI-assistant integration that can search trails and return details such as descriptions, ratings, difficulty, and weather; this is a consumer assistant integration, not evidence of a public developer SDK for embedding the AllTrails database in ReelSpot. [AllTrails integrations with AI assistants](https://support.alltrails.com/hc/en-us/articles/47343827423764-AllTrails-integrations-with-AI-assistants)
+AllTrails is a useful product reference, but it is not a dependency. We can build the trail catalog, map, filters, route import, and planning experience inside ReelSpot without paying for AllTrails. Do not scrape hidden endpoints or copy AllTrails route geometry, ratings, photos, or reviews without permission or a licensed agreement.
 
-ReelSpot should support three source modes:
+ReelSpot should make these source modes explicit:
 
-1. **Saved AllTrails link:** capture the link from a reel or share sheet, store it as evidence, show a trail card, and offer “Open in AllTrails.” Do not scrape hidden endpoints or copy AllTrails route geometry, ratings, photos, or reviews without permission or a licensed agreement.
-2. **Independent trail data:** search and display trail routes from a licensed provider or OpenStreetMap-derived data, with required attribution and license handling. OpenStreetMap includes trails and permits use with attribution under its data license; its public tile service and usage limits still need to be respected. [OpenStreetMap license](https://www.openstreetmap.org/about/license)
-3. **User-provided route:** let a user import a GPX/GeoJSON file or draw/record a route. AllTrails documents member export of GPX and GeoJSON route files, so a user-initiated export/import flow is a practical way to bring a route into ReelSpot without automated extraction. Store the route as user content with an explicit source and visibility. [AllTrails file downloads](https://support.alltrails.com/hc/en-us/articles/37230403315476-Downloading-files-from-AllTrails)
+1. **Open/independent trail data (primary):** search and display routes from OpenStreetMap-derived data, government parks datasets, or a licensed provider. OpenStreetMap includes trails and permits use with attribution under its data license; its public tile service and usage limits still need to be respected. [OpenStreetMap license](https://www.openstreetmap.org/about/license)
+2. **User-provided route:** let a user import a GPX/GeoJSON file or draw/record a route. Store it as user content with an explicit source and visibility. This gives ReelSpot a real route to draw without pretending it came from a commercial catalog.
+3. **Saved external link (optional):** if a reel contains an AllTrails link, preserve it as evidence and offer “Open link.” It is only a reference link; ReelSpot does not need it to render, search, or plan from its own trail records.
 
-The first trail version should combine modes 1 and 3, then evaluate mode 2. A saved AllTrails link is immediately useful even when no route data is licensed. A user-provided GPX gives us a real route to draw without pretending it came from AllTrails.
+The first trail version should combine modes 1 and 2. Start with a small target region and a curated/imported dataset rather than attempting worldwide coverage. Add more providers only if the open data has a measured gap (for example, missing elevation or closure information).
 
 Trail records need more than a single pin: trailhead coordinate, route geometry when available, route type (loop, out-and-back, point-to-point), distance, elevation gain, estimated duration, difficulty, surface, accessibility, dog policy, last verified time, source, and safety/closure notes. Keep route geometry separate from the general activity record so a walk can exist without it. MapKit supports rendering path overlays such as polylines, so a resolved route can be drawn on the map. [MapKit overlays](https://developer.apple.com/documentation/mapkit/mapkit-overlays)
 
-The assistant can then answer “Which saved walks are easy and under 5 km?” from ReelSpot records. For fresh trail discovery or safety data, use an explicitly labelled external provider mode and show the provider and retrieval time. Do not present stale or unverified conditions as current. Navigation, offline maps, off-route alerts, and live safety features are a later product surface; initially link to the selected trail app or Apple Maps for directions to the trailhead.
+The assistant can then answer “Which saved walks are easy and under 5 km?” from ReelSpot records. For fresh trail discovery or safety data, use an explicitly labelled provider mode and show the provider and retrieval time. Do not present stale or unverified conditions as current. Navigation, offline maps, off-route alerts, and live safety features are a later product surface. Initially use MapKit for the map and route overlay, and Apple Maps for directions to the trailhead.
 
 ## Data and the graph idea
 

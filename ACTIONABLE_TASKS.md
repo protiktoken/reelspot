@@ -92,15 +92,15 @@ flowchart LR
 | ID | Task | Depends on | Acceptance criteria |
 | --- | --- | --- | --- |
 | T-01 | Model trail-specific fields | S-08 | Activities can store trailhead, route type, route geometry reference, distance, elevation gain, duration, difficulty, surface, accessibility, dog policy, source, and last-verified time without requiring every field. |
-| T-02 | Preserve and open saved AllTrails links | I-04, S-02 | An AllTrails link is stored as source evidence, displayed on the trail card, and opens through an explicit external-link action. No undocumented endpoint or scraped route data is required. |
+| T-02 | Preserve optional external trail links | I-04, S-02 | An AllTrails or other trail link is stored as source evidence, displayed on the trail card, and opens through an explicit external-link action. It is not required for ReelSpot route data. No undocumented endpoint or scraped route data is required. |
 | T-03 | Add GPX/GeoJSON user import | T-01 | A user can import a route file, review its name/start point/geometry, and save it as user-provided content with source and visibility labels. Invalid or oversized files fail clearly. |
 | T-04 | Draw a saved route on MapKit | T-03 | A user-provided route renders as an overlay with a trailhead marker; map cards distinguish a route from a starting-point-only activity. |
-| T-05 | Evaluate an independent trail provider | T-01 | Compare at least one licensed provider and OpenStreetMap-derived option for coverage, attribution, route geometry, difficulty, elevation, closures, rate limits, and cost in the target region. |
+| T-05 | Build the independent trail data source | T-01 | Import a target-region OpenStreetMap/government dataset or selected licensed provider into ReelSpot's schema; record coverage, attribution, route geometry, difficulty, elevation, closures, rate limits, and cost. |
 | T-06 | Add trail filters | T-01, S-05 | Walks can be filtered by distance, duration, difficulty, route type, accessibility, dog policy, and visited status where data exists. Unknown values remain filterable as unknown. |
 | T-07 | Add trail assistant tools | T-06, A-01 | `search_saved_trails`, `get_trail_details`, and `find_nearby_trails` return scoped records with source and freshness metadata. External discovery is visibly labelled. |
 | T-08 | Add trail safety and freshness states | T-05 | Closure, weather, and condition data show provider, retrieval time, and unknown/stale states. The UI does not claim that old data is current. |
 
-**Milestone T exit:** a saved AllTrails link, a user-provided GPX route, and an independently sourced trail are visibly distinct, searchable, and handled with the correct attribution and freshness state.
+**Milestone T exit:** an independently sourced trail and a user-provided GPX route are visibly distinct, searchable, and handled with the correct attribution and freshness state. External trail links remain optional evidence.
 
 ## A — Search assistant
 
