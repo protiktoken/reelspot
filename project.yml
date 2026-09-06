@@ -1,0 +1,31 @@
+name: ReelSpot
+
+options:
+  bundleIdPrefix: com.protiktoken
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  ReelSpot:
+    type: application
+    platform: iOS
+    sources:
+      - path: ReelSpot
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.protiktoken.reelspot
+        PRODUCT_NAME: ReelSpot
+        INFOPLIST_KEY_CFBundleDisplayName: ReelSpot
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.lifestyle
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        TARGETED_DEVICE_FAMILY: "1"
+    scheme:
+      gatherCoverageData: false
