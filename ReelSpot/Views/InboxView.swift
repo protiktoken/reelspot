@@ -46,6 +46,16 @@ struct InboxView: View {
         .navigationTitle("Your ideas")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $model.searchText, prompt: "Search saved reels")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape")
+                }
+                .accessibilityLabel("Settings")
+            }
+        }
         .navigationDestination(for: UUID.self) { id in
             if let item = model.item(withID: id) {
                 ItemDetailView(item: item)
