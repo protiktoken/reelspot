@@ -63,7 +63,7 @@ struct MockSavedItemRepository: SavedItemRepository, Sendable {
             sourceName: "Facebook Reels",
             sourceURL: URL(string: "https://www.facebook.com/"),
             savedBy: "You",
-            status: .processing,
+            status: .ready,
             tags: ["outdoors", "free"],
             address: "Merri Creek, VIC",
             coordinate: MapLocation(latitude: -37.7661, longitude: 144.9924),
