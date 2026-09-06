@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02D5DA7646E209FE74D08CD1 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC606AA49557B549080835 /* Components.swift */; };
+		085CA55CBAAD6AD119C2CA0F /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9696854AD486F722DF397CD /* AppAppearance.swift */; };
+		0C7940529396A5A3500DEFE9 /* ReelSpotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC56A94060E9C433D61791 /* ReelSpotApp.swift */; };
+		10C95FE08EB31847E61F873C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516F19B05DF1C9DBDBFD23A0 /* RootView.swift */; };
+		1BC9453A290B7E475B076217 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5967E7E608C84842138BEC1 /* SettingsView.swift */; };
+		1DECD53BF065E1E151FB12E4 /* AskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F4E49055AEE215CAAEC0A6 /* AskView.swift */; };
+		208072CCA947B48C1131335A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D09F30F74DEF85E3CE1598 /* LibraryView.swift */; };
+		749D0A58BC8438FBE484A7D3 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194DFF290D81EC32CBAD33D /* ItemDetailView.swift */; };
+		771E5BD07C76EBECDCD5112E /* MapHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54937AC52CD5AFD92D8767 /* MapHomeView.swift */; };
+		9746D6126D519FD0722DBFFD /* AddLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00FFBF2BA4176FDF7D414E /* AddLinkView.swift */; };
+		B460FBE79555C45D60804D68 /* SavedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE795E8B287A2BABDF448038 /* SavedItem.swift */; };
+		C06C3CFF45A87CB8C1D79139 /* SavedItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99DC10BA4C93FB63BE7299 /* SavedItemRepository.swift */; };
+		CC75838E16B608C8AE86AF32 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DDFA3C974CC09165E6DB4D /* InboxView.swift */; };
+		D2271820B97C2A369E43562D /* WalksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5444A938ECB0A04212F94AC /* WalksView.swift */; };
+		EF02B6235A737C59EA93703E /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D484D26D6A5117C176A4B61 /* AppModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13DDFA3C974CC09165E6DB4D /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		22DC606AA49557B549080835 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		3D484D26D6A5117C176A4B61 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		516F19B05DF1C9DBDBFD23A0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		80F4E49055AEE215CAAEC0A6 /* AskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskView.swift; sourceTree = "<group>"; };
+		85B0974CE750C6593863DD2E /* ReelSpot.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReelSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BC56A94060E9C433D61791 /* ReelSpotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelSpotApp.swift; sourceTree = "<group>"; };
+		8A00FFBF2BA4176FDF7D414E /* AddLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkView.swift; sourceTree = "<group>"; };
+		B5967E7E608C84842138BEC1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CD99DC10BA4C93FB63BE7299 /* SavedItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemRepository.swift; sourceTree = "<group>"; };
+		D194DFF290D81EC32CBAD33D /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		D1D09F30F74DEF85E3CE1598 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		DE795E8B287A2BABDF448038 /* SavedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItem.swift; sourceTree = "<group>"; };
+		E5444A938ECB0A04212F94AC /* WalksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksView.swift; sourceTree = "<group>"; };
+		E9696854AD486F722DF397CD /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		EE54937AC52CD5AFD92D8767 /* MapHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1216B2EDA0915FDFCCC3D865 = {
+			isa = PBXGroup;
+			children = (
+				3CF6CB0FD247A20314D920E9 /* ReelSpot */,
+				9AE0A7C50F511399082D17B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3CF6CB0FD247A20314D920E9 /* ReelSpot */ = {
+			isa = PBXGroup;
+			children = (
+				E31383F092E7AB246A32EDEE /* App */,
+				6D91FBD99F38AA0C9DA67029 /* Models */,
+				B8E9C5D108AB14377000F69F /* Services */,
+				CC16CA9713D368DBDF2F1499 /* Views */,
+			);
+			path = ReelSpot;
+			sourceTree = "<group>";
+		};
+		6D91FBD99F38AA0C9DA67029 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE795E8B287A2BABDF448038 /* SavedItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9AE0A7C50F511399082D17B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85B0974CE750C6593863DD2E /* ReelSpot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8E9C5D108AB14377000F69F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD99DC10BA4C93FB63BE7299 /* SavedItemRepository.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CC16CA9713D368DBDF2F1499 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A00FFBF2BA4176FDF7D414E /* AddLinkView.swift */,
+				80F4E49055AEE215CAAEC0A6 /* AskView.swift */,
+				22DC606AA49557B549080835 /* Components.swift */,
+				13DDFA3C974CC09165E6DB4D /* InboxView.swift */,
+				D194DFF290D81EC32CBAD33D /* ItemDetailView.swift */,
+				D1D09F30F74DEF85E3CE1598 /* LibraryView.swift */,
+				EE54937AC52CD5AFD92D8767 /* MapHomeView.swift */,
+				516F19B05DF1C9DBDBFD23A0 /* RootView.swift */,
+				B5967E7E608C84842138BEC1 /* SettingsView.swift */,
+				E5444A938ECB0A04212F94AC /* WalksView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E31383F092E7AB246A32EDEE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E9696854AD486F722DF397CD /* AppAppearance.swift */,
+				3D484D26D6A5117C176A4B61 /* AppModel.swift */,
+				85BC56A94060E9C433D61791 /* ReelSpotApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDE1353B36335CCC69E05E91 /* ReelSpot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95B9A1A2EB11D8DA6213569D /* Build configuration list for PBXNativeTarget "ReelSpot" */;
+			buildPhases = (
+				A19946F5272C9AF8CD8B38A7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReelSpot;
+			packageProductDependencies = (
+			);
+			productName = ReelSpot;
+			productReference = 85B0974CE750C6593863DD2E /* ReelSpot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C17F045755B889C91CC6E6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EDE1353B36335CCC69E05E91 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = C7D3A1D1283137824A0E67DC /* Build configuration list for PBXProject "ReelSpot" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1216B2EDA0915FDFCCC3D865;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9AE0A7C50F511399082D17B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDE1353B36335CCC69E05E91 /* ReelSpot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A19946F5272C9AF8CD8B38A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9746D6126D519FD0722DBFFD /* AddLinkView.swift in Sources */,
+				085CA55CBAAD6AD119C2CA0F /* AppAppearance.swift in Sources */,
+				EF02B6235A737C59EA93703E /* AppModel.swift in Sources */,
+				1DECD53BF065E1E151FB12E4 /* AskView.swift in Sources */,
+				02D5DA7646E209FE74D08CD1 /* Components.swift in Sources */,
+				CC75838E16B608C8AE86AF32 /* InboxView.swift in Sources */,
+				749D0A58BC8438FBE484A7D3 /* ItemDetailView.swift in Sources */,
+				208072CCA947B48C1131335A /* LibraryView.swift in Sources */,
+				771E5BD07C76EBECDCD5112E /* MapHomeView.swift in Sources */,
+				0C7940529396A5A3500DEFE9 /* ReelSpotApp.swift in Sources */,
+				10C95FE08EB31847E61F873C /* RootView.swift in Sources */,
+				B460FBE79555C45D60804D68 /* SavedItem.swift in Sources */,
+				C06C3CFF45A87CB8C1D79139 /* SavedItemRepository.swift in Sources */,
+				1BC9453A290B7E475B076217 /* SettingsView.swift in Sources */,
+				D2271820B97C2A369E43562D /* WalksView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		062F2068C924F47E64AEEEC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ReelSpot;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.protiktoken.reelspot;
+				PRODUCT_NAME = ReelSpot;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A21427503F8F9B5B839CDD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C185604C8B83AB8F0DCB1C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F5491B5D74A7C0BCE07068F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ReelSpot;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.protiktoken.reelspot;
+				PRODUCT_NAME = ReelSpot;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95B9A1A2EB11D8DA6213569D /* Build configuration list for PBXNativeTarget "ReelSpot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				062F2068C924F47E64AEEEC7 /* Debug */,
+				F5491B5D74A7C0BCE07068F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C7D3A1D1283137824A0E67DC /* Build configuration list for PBXProject "ReelSpot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C185604C8B83AB8F0DCB1C98 /* Debug */,
+				A21427503F8F9B5B839CDD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C17F045755B889C91CC6E6E /* Project object */;
+}
