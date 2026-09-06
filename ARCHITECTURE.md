@@ -35,6 +35,7 @@ flowchart TB
 
     subgraph External["External services"]
         Content["Source adapters: accessible metadata and comments"]
+        TrailData["Independent trail datasets/providers"]
         Model["Language and embedding models"]
         Maps["Places and routing provider"]
     end
@@ -48,9 +49,10 @@ flowchart TB
     API -->|enqueue with saved item in one transaction| Queue
     Queue -->|claim job| Worker
     Worker <-->|fetch evidence| Content
+    TrailData -->|dataset/API response| Worker
     Worker <-->|extract and embed| Model
     Worker <-->|resolve place candidates| Maps
-    Worker -->|store results and job status| DB
+    Worker -->|store results, provenance, and freshness| DB
     Assistant <-->|interpret and explain| Model
     Assistant <-->|search saved records| Search
     Planner <-->|place details and travel estimates| Maps
@@ -61,6 +63,8 @@ Boxes describe responsibilities, not a requirement for separate servers. Start w
 The phone handles interaction and display. The backend coordinates slow work and protects provider credentials. The database persists the collection for both people. External services provide evidence, language processing, place matching, or travel estimates.
 
 The app draws maps with MapKit. The server-side places/routing provider supplies data for matching and planning; these are different responsibilities. Apple Maps is the starting candidate, with exact field coverage still to be checked.
+
+Independent trail data follows the same boundary: a dataset or provider response enters the worker through the one backend codebase, where geometry and supported fields are validated before PostgreSQL stores the trail record with acquisition path, source/provider, license terms, attribution, version or retrieval timestamp, provenance, freshness, and retirement state. No additional service is required.
 
 The share extension is a small entry point launched from another app. It writes the pending save locally before attempting upload. If upload cannot complete, the main app can retry when it next runs; the design does not promise unlimited background execution on iOS. Locally queued and server-saved states must be distinguishable.
 

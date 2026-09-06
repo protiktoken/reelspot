@@ -68,15 +68,15 @@ Each detail card links back to its source reels, explains the match, supports co
 
 ## Trail experience and independent data
 
-AllTrails is a useful product reference, but it is not a dependency. We can build the trail catalog, map, filters, route import, and planning experience inside ReelSpot without paying for AllTrails. Do not scrape hidden endpoints or copy AllTrails route geometry, ratings, photos, or reviews without permission or a licensed agreement.
+AllTrails is a useful product reference, but it is not a dependency. We can build the trail catalog, map, filters, route import, and planning experience inside ReelSpot without relying on AllTrails. Do not scrape hidden endpoints or copy AllTrails route geometry, ratings, photos, or reviews without permission or a licensed agreement.
 
 ReelSpot should make these source modes explicit:
 
 1. **Open/independent trail data (primary):** search and display routes from OpenStreetMap-derived data, government parks datasets, or a licensed provider. OpenStreetMap includes trails and permits use with attribution under its data license; its public tile service and usage limits still need to be respected. [OpenStreetMap license](https://www.openstreetmap.org/about/license)
-2. **User-provided route:** let a user import a GPX/GeoJSON file or draw/record a route. Store it as user content with an explicit source and visibility. This gives ReelSpot a real route to draw without pretending it came from a commercial catalog.
+2. **User-provided route:** in the first version, let a user import a GPX/GeoJSON file. User drawing/recording is explicitly deferred. Store an import only with its source, rights/license status, attribution where applicable, visibility, and provenance. User import does not bypass the no-copy/no-unlicensed-geometry rule: ReelSpot must not redistribute geometry the user lacks rights to share. Keep this content private to the shared space by default; public redistribution is not required.
 3. **Saved external link (optional):** if a reel contains an AllTrails link, preserve it as evidence and offer “Open link.” It is only a reference link; ReelSpot does not need it to render, search, or plan from its own trail records.
 
-The first trail version should combine modes 1 and 2. Start with a small target region and a curated/imported dataset rather than attempting worldwide coverage. Add more providers only if the open data has a measured gap (for example, missing elevation or closure information).
+The first trail version should combine modes 1 and 2. Start with a small target region and a curated/imported dataset rather than attempting worldwide coverage. Add more providers only if the open data has a measured gap (for example, missing elevation or closure information). Weather and trail-condition fields are optional provider-backed data; without a selected provider and retrieval metadata, they remain unknown rather than current safety information.
 
 Trail records need more than a single pin: trailhead coordinate, route geometry when available, route type (loop, out-and-back, point-to-point), distance, elevation gain, estimated duration, difficulty, surface, accessibility, dog policy, last verified time, source, and safety/closure notes. Keep route geometry separate from the general activity record so a walk can exist without it. MapKit supports rendering path overlays such as polylines, so a resolved route can be drawn on the map. [MapKit overlays](https://developer.apple.com/documentation/mapkit/mapkit-overlays)
 
@@ -112,7 +112,7 @@ Use SQL for exact filters and relationships, spatial queries for nearby places, 
 - Native SwiftUI iOS app with MapKit and a small Share extension. This fits the iPhone-only scope and the share/map workflow. [MapKit for SwiftUI](https://developer.apple.com/documentation/mapkit/mapkit-for-swiftui)
 - Supabase for authentication and PostgreSQL, with a shared-space membership model and row-level access policies. Its documentation includes a [SwiftUI integration](https://supabase.com/docs/guides/getting-started/tutorials/with-swift).
 - PostGIS for map bounds/distance filtering and pgvector for semantic retrieval, both available within that database. [PostGIS](https://supabase.com/docs/guides/database/extensions/postgis), [pgvector](https://supabase.com/docs/guides/database/extensions/pgvector)
-- One small backend service and durable job queue for import adapters, model calls, retries, and planning. Language is a routine implementation choice; Python is a reasonable default if no existing preference emerges.
+- One small backend service and durable job queue for reel and independent-trail import adapters, model calls, retries, and planning. Language is a routine implementation choice; Python is a reasonable default if no existing preference emerges.
 - Start by evaluating Apple Maps for place search and travel estimates. Its [Server API](https://developer.apple.com/documentation/applemapsserverapi) supports these operations. Verify opening-hours availability separately; the plan must not assume every required field is available.
 - One model integration supporting structured extraction and tool calls. Choose the provider/model using the reel evaluation set and measured cost; no multi-agent orchestration is needed initially.
 - Local pending-save storage and a cached library for responsiveness. Keep privileged backend and model keys off the device.
@@ -121,7 +121,7 @@ Operational essentials: idempotent saves, bounded retries, timeout states, per-j
 
 ## Assistant behaviour
 
-Give the assistant a few typed tools: search_saved_items, get_item_evidence, find_nearby_places, get_place_details, estimate_travel_times, and draft_plan. Membership is enforced by the server; the model cannot choose another shared space.
+Give the assistant a few typed tools: search_saved_items, get_item_evidence, find_nearby_places, get_place_details, estimate_travel_times, search_saved_trails, get_trail_details, find_nearby_trails, and draft_plan. Trail results retain source and freshness metadata. Membership is enforced by the server; the model cannot choose another shared space.
 
 For planning, gather start location, date/start time, available duration, travel mode, craving/activity, budget if relevant, and whether the time includes returning home. Reuse explicit preferences but allow each person to edit them.
 
