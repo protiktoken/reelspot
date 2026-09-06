@@ -70,7 +70,14 @@ struct MockSavedItemRepository: SavedItemRepository, Sendable {
             duration: "45 min",
             activityCategory: .walk,
             distance: "3.2 km",
-            difficulty: "Easy"
+            difficulty: "Easy",
+            route: [
+                MapLocation(latitude: -37.7661, longitude: 144.9924),
+                MapLocation(latitude: -37.7648, longitude: 144.9940),
+                MapLocation(latitude: -37.7636, longitude: 144.9925),
+                MapLocation(latitude: -37.7646, longitude: 144.9907),
+                MapLocation(latitude: -37.7661, longitude: 144.9924)
+            ]
         ),
         SavedItem(
             title: "Gochujang butter beans",

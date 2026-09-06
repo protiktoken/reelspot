@@ -43,6 +43,13 @@ struct ItemDetailView: View {
                     }
                 }
 
+                if let route = item.route, route.count > 1 {
+                    detailSection(title: "Route", systemImage: "point.topleft.down.to.point.bottomright.curvepath") {
+                        Text("Full route shown on your map")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
                 if !item.tags.isEmpty {
                     detailSection(title: "Tags", systemImage: "tag") {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), alignment: .leading)], alignment: .leading, spacing: 8) {
@@ -76,7 +83,7 @@ struct ItemDetailView: View {
             Text(item.subtitle)
                 .font(.title3)
                 .foregroundStyle(.secondary)
-            Text("Saved by (item.savedBy) · (item.sourceName)")
+            Text(item.attributionText)
                 .font(.subheadline)
                 .foregroundStyle(.tertiary)
         }
@@ -128,8 +135,14 @@ struct ItemDetailView: View {
             }
 
             if let sourceURL = item.sourceURL {
+                Link(destination: sourceURL) {
+                    Label("Open original link", systemImage: "arrow.up.right.square")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+
                 ShareLink(item: sourceURL) {
-                    Label("Share or open original link", systemImage: "arrow.up.right.square")
+                    Label("Share original link", systemImage: "square.and.arrow.up")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InboxView: View {
     @EnvironmentObject private var model: AppModel
+    @State private var isShowingAddLink = false
 
     var body: some View {
         ScrollView {
@@ -48,13 +49,26 @@ struct InboxView: View {
         .searchable(text: $model.searchText, prompt: "Search saved reels")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    SettingsView()
-                } label: {
-                    Image(systemName: "gearshape")
+                HStack(spacing: 16) {
+                    Button {
+                        isShowingAddLink = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("Save a reel link")
+
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                    .accessibilityLabel("Settings")
                 }
-                .accessibilityLabel("Settings")
             }
+        }
+        .sheet(isPresented: $isShowingAddLink) {
+            AddLinkView()
+                .environmentObject(model)
         }
         .navigationDestination(for: UUID.self) { id in
             if let item = model.item(withID: id) {

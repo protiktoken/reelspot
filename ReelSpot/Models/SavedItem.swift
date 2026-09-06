@@ -4,6 +4,7 @@ enum SavedItemKind: String, CaseIterable, Identifiable, Sendable {
     case place
     case recipe
     case activity
+    case unknown
 
     var id: String { rawValue }
 
@@ -12,6 +13,7 @@ enum SavedItemKind: String, CaseIterable, Identifiable, Sendable {
         case .place: "Eat"
         case .recipe: "Cook"
         case .activity: "Visit"
+        case .unknown: "Idea"
         }
     }
 
@@ -20,6 +22,7 @@ enum SavedItemKind: String, CaseIterable, Identifiable, Sendable {
         case .place: "fork.knife"
         case .recipe: "frying.pan"
         case .activity: "figure.hiking"
+        case .unknown: "link"
         }
     }
 }
@@ -118,7 +121,12 @@ struct SavedItem: Identifiable, Hashable, Sendable {
     let activityCategory: ActivityCategory?
     let distance: String?
     let difficulty: String?
+    let route: [MapLocation]?
     let evidence: [Evidence]
+
+    var attributionText: String {
+        "Saved by \(savedBy) · \(sourceName)"
+    }
 
     var isMapped: Bool {
         coordinate != nil && status == .ready
@@ -141,6 +149,7 @@ struct SavedItem: Identifiable, Hashable, Sendable {
         activityCategory: ActivityCategory? = nil,
         distance: String? = nil,
         difficulty: String? = nil,
+        route: [MapLocation]? = nil,
         evidence: [Evidence] = []
     ) {
         self.id = id
@@ -159,6 +168,7 @@ struct SavedItem: Identifiable, Hashable, Sendable {
         self.activityCategory = activityCategory
         self.distance = distance
         self.difficulty = difficulty
+        self.route = route
         self.evidence = evidence
     }
 }

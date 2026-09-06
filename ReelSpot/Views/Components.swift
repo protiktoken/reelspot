@@ -71,16 +71,9 @@ struct SavedItemRow: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
-                HStack(spacing: 8) {
-                    Text(item.sourceName)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Text("·")
-                        .foregroundStyle(.tertiary)
-                    Text("Saved by (item.savedBy)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
+                Text(item.attributionText)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
 
                 HStack(spacing: 8) {
                     StatusPill(status: item.status)
@@ -146,6 +139,7 @@ extension SavedItemKind {
         case .place: .orange
         case .recipe: .green
         case .activity: .blue
+        case .unknown: .secondary
         }
     }
 }

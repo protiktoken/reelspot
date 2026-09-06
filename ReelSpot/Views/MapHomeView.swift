@@ -9,12 +9,19 @@ struct MapHomeView: View {
         ZStack(alignment: .bottom) {
             Map(position: $cameraPosition) {
                 ForEach(model.mappedItems) { item in
+                    if let route = item.route, route.count > 1 {
+                        MapPolyline(coordinates: route.map { coordinate in
+                            CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+                        })
+                        .stroke(item.kind.tint, lineWidth: 5)
+                    }
+
                     if let coordinate = item.coordinate {
                         Marker(item.title, coordinate: CLLocationCoordinate2D(
                             latitude: coordinate.latitude,
                             longitude: coordinate.longitude
                         ))
-                        .tint(.orange)
+                        .tint(item.kind.tint)
                     }
                 }
             }

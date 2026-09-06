@@ -67,6 +67,20 @@ final class AppModel: ObservableObject {
         items.first { $0.id == id }
     }
 
+    func saveLink(_ url: URL) {
+        let item = SavedItem(
+            title: "Saved reel",
+            kind: .unknown,
+            subtitle: "Waiting for enrichment",
+            sourceName: sourceName(for: url),
+            sourceURL: url,
+            savedBy: "You",
+            status: .processing,
+            evidence: [Evidence(source: "Saved link", text: url.absoluteString, isUserProvided: true)]
+        )
+        items.insert(item, at: 0)
+    }
+
     func markReviewed(_ item: SavedItem, address: String, coordinate: MapLocation) {
         guard let index = items.firstIndex(where: { $0.id == item.id }) else { return }
         let updated = SavedItem(
@@ -86,8 +100,18 @@ final class AppModel: ObservableObject {
             activityCategory: item.activityCategory,
             distance: item.distance,
             difficulty: item.difficulty,
+            route: item.route,
             evidence: item.evidence
         )
         items[index] = updated
+    }
+
+    private func sourceName(for url: URL) -> String {
+        let host = url.host?.lowercased() ?? ""
+        if host.contains("instagram") { return "Instagram" }
+        if host.contains("tiktok") { return "TikTok" }
+        if host.contains("youtube") || host.contains("youtu.be") { return "YouTube" }
+        if host.contains("facebook") { return "Facebook" }
+        return "Web link"
     }
 }
